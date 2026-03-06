@@ -69,13 +69,11 @@
   }
   @keyframes slideUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
 
-  .logo-wrap{display:flex;align-items:center;gap:12px;margin-bottom:36px;}
-  .logo-icon{
-    width:44px;height:44px;background:var(--accent);border-radius:12px;
-    display:flex;align-items:center;justify-content:center;font-size:22px;
-  }
-  .logo-text{font-family:var(--fh);font-size:23px;font-weight:800;letter-spacing:-.5px;}
+  .logo-wrap{display:flex;align-items:center;gap:14px;margin-bottom:36px;}
+  .logo-svg{width:52px;height:52px;flex-shrink:0;filter:drop-shadow(0 4px 16px rgba(0,229,160,.45));}
+  .logo-text{font-family:var(--fh);font-size:22px;font-weight:800;letter-spacing:-.5px;line-height:1.15;}
   .logo-text em{color:var(--accent);font-style:normal;}
+  .logo-text small{display:block;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--text2);font-weight:400;font-family:var(--fm);margin-top:1px;}
 
   .login-title{font-family:var(--fh);font-size:27px;font-weight:800;margin-bottom:5px;}
   .login-sub{color:var(--text2);font-size:13px;margin-bottom:30px;}
@@ -114,10 +112,10 @@
     background:var(--surface);border-right:1px solid var(--border);
     display:flex;flex-direction:column;padding:22px 14px;z-index:100;
   }
-  .sb-logo{display:flex;align-items:center;gap:10px;padding:0 8px 24px;border-bottom:1px solid var(--border);margin-bottom:20px;}
-  .sb-logo .ico{width:34px;height:34px;background:var(--accent);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:16px;}
-  .sb-logo span{font-family:var(--fh);font-size:18px;font-weight:800;}
-  .sb-logo span em{color:var(--accent);font-style:normal;}
+  .sb-logo{display:flex;align-items:center;gap:10px;padding:0 6px 22px;border-bottom:1px solid var(--border);margin-bottom:20px;}
+  .sb-logo .sb-svg{width:32px;height:32px;flex-shrink:0;filter:drop-shadow(0 2px 8px rgba(0,229,160,.4));}
+  .sb-logo .sb-name{font-family:var(--fh);font-size:16px;font-weight:800;line-height:1.15;}
+  .sb-logo .sb-name em{color:var(--accent);font-style:normal;} .sb-logo .sb-name small{display:block;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--text2);font-family:var(--fm);font-weight:400;}
 
   .nav{display:flex;align-items:center;gap:11px;padding:11px 13px;border-radius:10px;cursor:pointer;color:var(--text2);font-size:13px;transition:all .18s;margin-bottom:3px;}
   .nav:hover{background:var(--surface2);color:var(--text);}
@@ -253,8 +251,16 @@
 <div id="setup-screen">
   <div class="setup-card">
     <div class="logo-wrap">
-      <div class="logo-icon">💹</div>
-      <div class="logo-text">Cash<em>Flow</em> Pro</div>
+      <svg class="logo-svg" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs><linearGradient id="lg1" x1="0" y1="0" x2="52" y2="52" gradientUnits="userSpaceOnUse"><stop stop-color="#00e5a0"/><stop offset="1" stop-color="#00b8ff"/></linearGradient></defs>
+  <rect width="52" height="52" rx="14" fill="url(#lg1)"/>
+  <polyline points="13,35 20,25 27,30 35,17" stroke="#07090f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <circle cx="35" cy="17" r="3" fill="#07090f"/>
+  <rect x="13" y="37.5" width="26" height="2.5" rx="1.25" fill="#07090f" opacity=".4"/>
+  <rect x="13" y="13" width="4" height="7" rx="1" fill="#07090f" opacity=".3"/>
+  <rect x="19" y="16" width="4" height="4" rx="1" fill="#07090f" opacity=".2"/>
+</svg>
+      <div class="logo-text">Cash<em>Flow</em><small>Financial Manager</small></div>
     </div>
     <div class="login-title" style="margin-bottom:6px;">Konfigurasi Awal</div>
     <p style="font-size:13px;color:var(--text2);margin-bottom:24px;">
@@ -287,8 +293,16 @@
 <div id="login-screen" style="display:none;">
   <div class="login-card">
     <div class="logo-wrap">
-      <div class="logo-icon">💹</div>
-      <div class="logo-text">Cash<em>Flow</em> Pro</div>
+      <svg class="logo-svg" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs><linearGradient id="lg1" x1="0" y1="0" x2="52" y2="52" gradientUnits="userSpaceOnUse"><stop stop-color="#00e5a0"/><stop offset="1" stop-color="#00b8ff"/></linearGradient></defs>
+  <rect width="52" height="52" rx="14" fill="url(#lg1)"/>
+  <polyline points="13,35 20,25 27,30 35,17" stroke="#07090f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <circle cx="35" cy="17" r="3" fill="#07090f"/>
+  <rect x="13" y="37.5" width="26" height="2.5" rx="1.25" fill="#07090f" opacity=".4"/>
+  <rect x="13" y="13" width="4" height="7" rx="1" fill="#07090f" opacity=".3"/>
+  <rect x="19" y="16" width="4" height="4" rx="1" fill="#07090f" opacity=".2"/>
+</svg>
+      <div class="logo-text">Cash<em>Flow</em><small>Financial Manager</small></div>
     </div>
     <div class="login-title">Selamat Datang</div>
     <div class="login-sub">Masuk untuk mengelola arus kas Anda</div>
@@ -304,12 +318,12 @@
     <div id="lerr" style="color:var(--expense);font-size:13px;margin-bottom:10px;display:none;"></div>
     <button class="btn btn-primary" id="login-btn" onclick="doLogin()">🔐 Masuk</button>
 
-    <div style="margin-top:18px;padding:12px 15px;background:rgba(0,229,160,.05);border:1px solid rgba(0,229,160,.15);border-radius:10px;font-size:12px;color:var(--text2);line-height:1.8;">
-      <strong style="color:var(--accent)">Demo:</strong> admin / admin123 &nbsp;|&nbsp; user / user123<br>
-      <strong style="color:var(--accent)">Data</strong> tersimpan di Google Sheets Anda secara real-time.
+    <div style="margin-top:18px;padding:13px 16px;background:rgba(0,229,160,.04);border:1px solid rgba(0,229,160,.12);border-radius:10px;font-size:12px;color:var(--text2);line-height:1.8;display:flex;align-items:center;gap:10px;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#00e5a0" stroke-width="1.5" stroke-linejoin="round"/></svg>
+      <span>Data tersimpan aman di <strong style="color:var(--accent)">Google Sheets</strong> Anda secara real-time.</span>
     </div>
 
-    <button class="btn btn-ghost" style="width:100%;margin-top:12px;font-size:12px;" onclick="showSetup()">⚙️ Ubah Konfigurasi API</button>
+    
   </div>
 </div>
 
@@ -317,8 +331,14 @@
 <div id="app">
   <aside class="sidebar">
     <div class="sb-logo">
-      <div class="ico">💹</div>
-      <span>Cash<em>Flow</em></span>
+      <svg class="sb-svg" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs><linearGradient id="lg2" x1="0" y1="0" x2="52" y2="52" gradientUnits="userSpaceOnUse"><stop stop-color="#00e5a0"/><stop offset="1" stop-color="#00b8ff"/></linearGradient></defs>
+  <rect width="52" height="52" rx="14" fill="url(#lg2)"/>
+  <polyline points="13,35 20,25 27,30 35,17" stroke="#07090f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <circle cx="35" cy="17" r="3" fill="#07090f"/>
+  <rect x="13" y="37.5" width="26" height="2.5" rx="1.25" fill="#07090f" opacity=".4"/>
+</svg>
+      <div class="sb-name">Cash<em>Flow</em><small>Pro Manager</small></div>
     </div>
     <div class="nav active" onclick="showPage('dashboard')"><span class="ni">📊</span>Dashboard</div>
     <div class="nav" onclick="showPage('transaksi')"><span class="ni">💸</span>Transaksi</div>
@@ -330,7 +350,7 @@
         <div class="ur" id="sb-ur"></div>
         <button class="btn btn-ghost" style="width:100%;padding:8px;font-size:12px;" onclick="doLogout()">🚪 Keluar</button>
       </div>
-      <button class="btn btn-ghost" style="width:100%;padding:9px;font-size:12px;" onclick="showSetup()">⚙️ Konfigurasi API</button>
+      <!-- API URL sudah tertanam -->
     </div>
   </aside>
 
@@ -460,10 +480,11 @@
 // ═══════════════════════════════════════
 //  CONFIG
 // ═══════════════════════════════════════
-const API_KEY = 'cf_api_url';
+// ── API URL tertanam langsung (tidak perlu konfigurasi manual)
+const HARDCODED_API_URL = 'https://script.google.com/macros/s/AKfycbzZslPfa5lVuf3IGeh_byam2jqv3bm3wANFXdhvsW2xb2UoZ01Dy7raS8V3QOD3hlnl/exec';
 
-function getApiUrl() { return localStorage.getItem(API_KEY) || ''; }
-function setApiUrl(u) { localStorage.setItem(API_KEY, u); }
+function getApiUrl() { return HARDCODED_API_URL; }
+function setApiUrl(u) { /* URL sudah tertanam */ }
 
 const KI = ['Gaji','Bonus','Freelance','Investasi','Penjualan','Lain-lain'];
 const KE = ['Makan & Minum','Transport','Belanja','Tagihan','Kesehatan','Hiburan','Pendidikan','Lain-lain'];
@@ -478,12 +499,8 @@ let barChart = null, pieChart = null;
 //  BOOT
 // ═══════════════════════════════════════
 window.onload = () => {
-  const url = getApiUrl();
-  if (!url) {
-    document.getElementById('setup-screen').classList.add('open');
-  } else {
-    document.getElementById('login-screen').style.display = 'flex';
-  }
+  // URL sudah tertanam, langsung tampilkan login
+  document.getElementById('login-screen').style.display = 'flex';
 };
 
 // ═══════════════════════════════════════
