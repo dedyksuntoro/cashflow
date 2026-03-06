@@ -489,24 +489,30 @@ window.onload = () => {
 // ═══════════════════════════════════════
 //  API CALL
 // ═══════════════════════════════════════
+// Google Apps Script CORS fix:
+// - Semua request pakai GET + query string (menghindari preflight CORS)
+// - redirect: 'follow' wajib karena Apps Script selalu redirect ke URL baru
 async function api(params, method='GET', body=null) {
   const url = getApiUrl();
   if (!url) throw new Error('API URL belum dikonfigurasi');
 
-  let res;
-  if (method === 'GET') {
-    const qs = new URLSearchParams(params).toString();
-    res = await fetch(`${url}?${qs}`);
-  } else {
-    res = await fetch(url, {
-      method: 'POST',
-      body: JSON.stringify({...params, ...body}),
-      headers: {'Content-Type':'application/json'}
-    });
-  }
+  // Gabungkan params + body jadi satu object, kirim via GET
+  const allParams = { ...params, ...(body || {}) };
+  const qs = new URLSearchParams(allParams).toString();
+  const fullUrl = `${url}?${qs}`;
 
-  const data = await res.json();
-  return data;
+  const res = await fetch(fullUrl, {
+    method: 'GET',
+    redirect: 'follow',   // WAJIB untuk Google Apps Script
+  });
+
+  // Apps Script kadang return teks bukan JSON saat error
+  const text = await res.text();
+  try {
+    return JSON.parse(text);
+  } catch(e) {
+    throw new Error('Respons tidak valid dari server. Pastikan URL Apps Script benar dan sudah di-deploy.');
+  }
 }
 
 // ═══════════════════════════════════════
